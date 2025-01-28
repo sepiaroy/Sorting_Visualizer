@@ -278,7 +278,6 @@ async function mergeSort(arr, left, right) {
 async function partition(arr, low, high)
 {
     let bars = document.getElementsByClassName('bar');   
-    console.log('hello');
 
     // Choose the pivot
     let pivot = arr[high];
@@ -328,7 +327,6 @@ function swap(arr, i, j)
     bars[j].style.height = `${arr[j]}px`;
 }
 
-// The QuickSort function implementation
 async function quickSort_implement(arr, low, high)
 {
     let bars = document.getElementsByClassName('bar');   
@@ -347,7 +345,7 @@ async function quickSort_implement(arr, low, high)
             quickSort_implement(arr, low, pi - 1), // Sort left partition
             quickSort_implement(arr, pi + 1, high) // Sort right partition
         ]);
-    } else {
+    } else if(low === high) {
         bars[low].style.backgroundColor = "blue";
     }
 }
@@ -398,20 +396,3 @@ quickSortEl.addEventListener('click', ()=> {
     if(initialized)
         quickSort(unsortedArray, 0, noOfBars-1);
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
